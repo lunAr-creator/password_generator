@@ -7,6 +7,10 @@ class simplepass:
         self.characters = characters
 
     def generate(self, iterations):
+        '''
+        Generates a password depending on length, given characters and iterations. 
+        Uses 2 for loops to achieve this
+        '''
         for p in range(iterations):
             output_password = ''
             for c in range(self.length):
@@ -21,6 +25,12 @@ class complexpass(simplepass):
         self.special_chars = special_chars
 
     def generate(self, iterations):
+        '''
+        Generates a string for the var characters that is used to make 
+        a password depending on length, upper of lowercase, digits, special
+        characters and iterations. Uses 2 for loops to achieve this.
+        '''
+        
         characters = ''
 
         methods = {
@@ -35,6 +45,8 @@ class complexpass(simplepass):
             characters += string.digits
         if self.special_chars:
             characters += string.punctuation
+            
+        # Generates the password
 
         for p in range(iterations):
             output_password = ''
@@ -45,8 +57,12 @@ class complexpass(simplepass):
 # Tests
 
 if __name__ == '__main__':
+    # Generate a complex password
+    
     var1 = complexpass(20, 'both', True, True)
     var1.generate(3)
+    
+    # Generate a simple password
 
     var2 = simplepass(20, 'abcdefghijklmnopqrstuvwxyz0123467589')
     var2.generate(3)
