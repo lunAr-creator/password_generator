@@ -42,7 +42,7 @@ class complexpass(simplepass):
                 output_password += secrets.choice(characters)
             print(output_password)
 
-# Test
+# Tests
 
 if __name__ == '__main__':
     var1 = complexpass(20, 'both', True, False)
