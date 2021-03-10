@@ -45,7 +45,7 @@ class complexpass(simplepass):
 # Tests
 
 if __name__ == '__main__':
-    var1 = complexpass(20, 'both', True, False)
+    var1 = complexpass(20, 'both', True, True)
     var1.generate(3)
 
     var2 = simplepass(20, 'abcdefghijklmnopqrstuvwxyz0123467589')
