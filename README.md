@@ -48,6 +48,35 @@ print(var.result(1))
 ## Creating passwords - In depth
 ### Creating an object
 
+<details open>
+<summary>Creating an object</summary>
+<br>
+Blank
+</details>
+
+<details open>
+<summary>Generating Passwords</summary>
+<br>
+Blank
+</details>
+
+<details open>
+<summary>Getting specific passwords from the list of generated passwords</summary>
+<br>
+Blank
+</details>
+
+<details open>
+<summary>Hashing a password</summary>
+<br>
+Blank
+</details>
+
+<details open>
+<summary>Verifying a hashed password</summary>
+<br>
+Blank
+</details>
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
