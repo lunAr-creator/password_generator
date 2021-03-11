@@ -19,7 +19,8 @@ class password:
     def result(self, num) -> None:
         return password_result[num]
 
-var = password(20, 'abcdefghijklmnopqrstuvwxyz0123467589')
-print(var.generate(3))
+if __name__ == "__main__":
+    var = password(20, 'abcdefghijklmnopqrstuvwxyz0123467589')
+    print(var.generate(3))
 
-print(var.result(1))
+    print(var.result(1))
