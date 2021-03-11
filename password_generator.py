@@ -1,9 +1,10 @@
+import hashlib, binascii, os
 import secrets
 import string
 
 password_result = []
 
-class password:
+class simple:
     def __init__(self, length: int, characters: str) -> None:
         self.length = length
         self.characters = characters
@@ -16,14 +17,29 @@ class password:
             password_result.append(password)
         return password_result
 
-    def result(self, num) -> None:
+    def result(self, num: int) -> None:
         return password_result[num]
 
     def clear_results(self) -> None:
         password_result.clear()
 
 
-class complex(password):
+def hash(password):
+    """Hash a password for storing."""
+    salt = hashlib.sha256(os.urandom(60)).hexdigest().encode('ascii')
+    pwdhash = hashlib.pbkdf2_hmac('sha512', password.encode('utf-8'),salt, 100000)
+    pwdhash = binascii.hexlify(pwdhash)
+    return (salt + pwdhash).decode('ascii')
+
+def verify_hash(stored_password, provided_password):
+    """Verify a stored password against one provided by user"""
+    salt = stored_password[:64]
+    stored_password = stored_password[64:]
+    pwdhash = hashlib.pbkdf2_hmac('sha512',provided_password.encode('utf-8'),salt.encode('ascii'),100000)
+    pwdhash = binascii.hexlify(pwdhash).decode('ascii')
+    return pwdhash == stored_password
+
+class complex(simple):
     def __init__(self, length, string_method, numbers=True, special_chars=False):
         characters = ''
 
@@ -52,6 +68,12 @@ if __name__ == "__main__":
 
     # Print the 2nd result out of the 3 passwords generated above
     print(var.result(1))
+
+    stored_password = hash_password('ThisIsAPassWord')
+    print(stored_password)
+
+    if verify_password(stored_password, 'ThisIsAPassWord') == True:
+        print('The password is correct')
 
     #Clear the result so that the list of passwords is clear
     var.clear_results()
