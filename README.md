@@ -9,7 +9,7 @@ Use the package manager [pip]() to install password_generator.
 ```bash
 (library is not yet published on pypi)
 ```
-
+<br></br>
 ## Usage
 ### Simple passwords (Less Arguements)
 ```python
@@ -45,38 +45,40 @@ print(var.result(1))
 ['kQ6rbCxq1l7roGlJ5AUs', '0CXTxSWyXdPg3aZkjt7B', 'l4RY1CeRpARqX2uaQGtC']
 0CXTxSWyXdPg3aZkjt7B
 ```
+<br></br>
 ## Creating passwords - In depth
-### Creating an object
 
-<details open>
+<details>
 <summary>Creating an object</summary>
 <br>
 Blank
 </details>
 
-<details open>
+<details>
 <summary>Generating Passwords</summary>
 <br>
 Blank
 </details>
 
-<details open>
+<details>
 <summary>Getting specific passwords from the list of generated passwords</summary>
 <br>
 Blank
 </details>
 
-<details open>
+<details>
 <summary>Hashing a password</summary>
 <br>
 Blank
 </details>
 
-<details open>
+<details>
 <summary>Verifying a hashed password</summary>
 <br>
 Blank
 </details>
+
+<br></br>
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
