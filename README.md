@@ -63,7 +63,7 @@ from password_generator import simple
 var = simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
 ```
 
-Now for the second way to create a password. To create a "complex" password we must give the object 4 parameters: password length, string method (lowercase, uppercase or both), numbers (True or False) and special characters (True or False)
+Now for the second way option. To create a "complex" password we must give the object 4 parameters: password length, string method (lowercase, uppercase or both), numbers (True or False) and special characters (True or False)
 <br></br>
 Example:
 
