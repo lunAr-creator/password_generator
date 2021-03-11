@@ -6,7 +6,7 @@ from typing import List, Union
 
 class Simplepass:
     def __init__(self, length: int, characters: str) -> None:
-        if length > 65536: # 2^16 characters in a password should be more than enough
+        if length > 65536:  # 2^16 characters in a password should be more than enough
             raise ValueError("pls specify a length <= 2^16")
 
         self.length: int = length
@@ -55,8 +55,10 @@ class Complexpass(Simplepass):
                 "both": string.ascii_letters,
             }
             characters += methods[string_method]
-        except KeyError: 
-            raise ValueError("pls specify any of ['upper', 'lower', 'both'] for string_method")
+        except KeyError:
+            raise ValueError(
+                "pls specify any of ['upper', 'lower', 'both'] for string_method"
+            )
 
         if numbers:
             characters += string.digits
@@ -94,7 +96,7 @@ if __name__ == "__main__":
 
     # expected fail
     try:
-        cp2 = Complexpass(2**16 + 1)
+        cp2 = Complexpass(2 ** 16 + 1)
     except Exception as e:
         print(e)
     try:
