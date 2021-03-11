@@ -10,6 +10,7 @@ class simple:
         self.characters = characters
 
     def generate(self, iterations):
+        password_result.clear()
         for p in range(iterations):
             password: str = ''
             for c in range(self.length):
@@ -74,6 +75,3 @@ if __name__ == "__main__":
 
     if verify_password(stored_password, 'ThisIsAPassWord') == True:
         print('The password is correct')
-
-    #Clear the result so that the list of passwords is clear
-    var.clear_results()
