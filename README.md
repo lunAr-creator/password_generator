@@ -23,7 +23,7 @@ print(var.result(1))
 
 #### Output (Please note that output varies depending on arguements provided)
 
-```python
+```
 ['mr3s7swtr1k0l6as2m9a', 'b6uev6v4dhcbrptj0i89', 'q7gy2xm6szpyj1snbmz6']
 b6uev6v4dhcbrptj0i89
 ```
