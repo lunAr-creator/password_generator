@@ -13,32 +13,30 @@ IT IS NOT YET PUBLISHED ON PYPI
 ## Usage
 ### Simple passwords (Less Arguements)
 ```python
-from pass_gen import simplepass
+from pass_gen import Simplepass
 
 '''
 the int '20' represents password length and the alphabet + numbers
 represent the characters the password will be produced from
 '''
-var = simplepass(20, 'abcdefghijklmnopqrstuvwxyz0123467589')
+var = Simplepass(20, 'abcdefghijklmnopqrstuvwxyz0123467589')
 
 '''
 the int '3' represents the number of passwords the program will output
 '''
-var.generate(3)
+print(var.generate(3))
 ```
 
 #### Output (Please note that output varies depending on arguements provided)
 
 ```python
-pridxzc291n8h2d2hrs9
-lcczdyyv3mo22am1zg69
-kudkbgzfe1qpewyp7o71
+['i3q5qqubthcxi78jv7wk', 'dumrf29l194mszve7tgq', '4z9rw9zt7n0q0yjy8tpz']
 ```
 
 ### Complex passwords (More Arguements)
 
 ```python
-from pass_gen import complexpass
+from pass_gen import Complexpass
 
 '''
 the int '20' represents password length, 'both' represents lower and uppercase
@@ -46,21 +44,18 @@ letters (can be just 'lower' or 'upper'), 1st 'True' corresponds with digits (ca
 and 'False' stands for special characters (can be 'True')
 '''
 
-var = complexpass(20, 'both', True, False)
+var = Complexpass(20, 'both', True, False)
 
 '''
 the int '3' represents the number of passwords the program will output
 '''
-var.generate(3)
-
+print(var.generate(3))
 ```
 
 #### Output (Please note that output varys depending on arguements provided)
 
 ```python
-NA3beANS3ENLozf4bOtY
-sf578TVh5QIoMCPkmoOF
-hl6xQPVSsk4YJfkezA66
+["c@qSR&&.l^^AW_%'9jMn", '8JwBE5-=4!@}[ZDIM@^4', ',>k;rP$WT{_TY5$Ep0=P']
 ```
 
 
