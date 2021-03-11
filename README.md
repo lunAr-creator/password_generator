@@ -13,13 +13,13 @@ IT IS NOT YET PUBLISHED ON PYPI
 ## Usage
 ### Simple passwords (Less Arguements)
 ```python
-from pass_gen import simplepass
+from pass_gen import Simplepass
 
 '''
 the int '20' represents password length and the alphabet + numbers
 represent the characters the password will be produced from
 '''
-var = simplepass(20, 'abcdefghijklmnopqrstuvwxyz0123467589')
+var = Simplepass(20, 'abcdefghijklmnopqrstuvwxyz0123467589')
 
 '''
 the int '3' represents the number of passwords the program will output
@@ -36,7 +36,7 @@ print(var.generate(3))
 ### Complex passwords (More Arguements)
 
 ```python
-from pass_gen import complexpass
+from pass_gen import Complexpass
 
 '''
 the int '20' represents password length, 'both' represents lower and uppercase
@@ -44,7 +44,7 @@ letters (can be just 'lower' or 'upper'), 1st 'True' corresponds with digits (ca
 and 'False' stands for special characters (can be 'True')
 '''
 
-var = complexpass(20, 'both', True, False)
+var = Complexpass(20, 'both', True, False)
 
 '''
 the int '3' represents the number of passwords the program will output
