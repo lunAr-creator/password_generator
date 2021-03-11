@@ -24,7 +24,6 @@ class complexpass(simplepass):
         self.numbers = numbers
         self.special_chars = special_chars
 
-    def generate(self, iterations):
         '''
         Generates a string for the var characters that is used to make
         a password depending on length, upper of lowercase, digits, special
@@ -46,13 +45,7 @@ class complexpass(simplepass):
         if self.special_chars:
             characters += string.punctuation
 
-        # Generates the password
-
-        for p in range(iterations):
-            output_password = ''
-            for c in range(self.length):
-                output_password += secrets.choice(characters)
-            print(output_password)
+        super().__init__(length=length, characters=characters)
 
 # Tests
 
