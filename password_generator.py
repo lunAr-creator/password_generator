@@ -1,7 +1,7 @@
 import secrets
 import string
 
-result = []
+password_result = []
 
 class password:
     def __init__(self, length: int, characters: str) -> None:
@@ -13,10 +13,13 @@ class password:
             password: str = ''
             for c in range(self.length):
                 password += secrets.choice(self.characters)
-            result.append(password)
-        return result
+            password_result.append(password)
+        return password_result
+
+    def result(self, num) -> None:
+        return password_result[num]
 
 var = password(20, 'abcdefghijklmnopqrstuvwxyz0123467589')
-print(var.generate(2))
+print(var.generate(3))
 
-print(result[0])
+print(var.result(1))
