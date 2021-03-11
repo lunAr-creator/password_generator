@@ -30,7 +30,7 @@ print(var.generate(3)) # This will generate a password that is visible (as part 
 '''
 Reference passwords using result
 '''
-print(result[1]) # Will print the second password
+print(var.result(1)) # Will print the second password
 ```
 
 #### Output (Please note that output varies depending on arguements provided)
