@@ -2,6 +2,19 @@ import hashlib, binascii, os
 import secrets
 import string
 
+def hash(password):
+    salt = hashlib.sha256(os.urandom(60)).hexdigest().encode('ascii')
+    pwdhash = hashlib.pbkdf2_hmac('sha512', password.encode('utf-8'),salt, 100000)
+    pwdhash = binascii.hexlify(pwdhash)
+    return (salt + pwdhash).decode('ascii')
+
+def verify_hash(stored_password, provided_password):
+    salt = stored_password[:64]
+    stored_password = stored_password[64:]
+    pwdhash = hashlib.pbkdf2_hmac('sha512',provided_password.encode('utf-8'),salt.encode('ascii'),100000)
+    pwdhash = binascii.hexlify(pwdhash).decode('ascii')
+    return pwdhash == stored_password
+
 password_result = []
 
 class simple:
@@ -23,22 +36,6 @@ class simple:
 
     def clear_results(self) -> None:
         password_result.clear()
-
-
-def hash(password):
-    """Hash a password for storing."""
-    salt = hashlib.sha256(os.urandom(60)).hexdigest().encode('ascii')
-    pwdhash = hashlib.pbkdf2_hmac('sha512', password.encode('utf-8'),salt, 100000)
-    pwdhash = binascii.hexlify(pwdhash)
-    return (salt + pwdhash).decode('ascii')
-
-def verify_hash(stored_password, provided_password):
-    """Verify a stored password against one provided by user"""
-    salt = stored_password[:64]
-    stored_password = stored_password[64:]
-    pwdhash = hashlib.pbkdf2_hmac('sha512',provided_password.encode('utf-8'),salt.encode('ascii'),100000)
-    pwdhash = binascii.hexlify(pwdhash).decode('ascii')
-    return pwdhash == stored_password
 
 class complex(simple):
     def __init__(self, length, string_method, numbers=True, special_chars=False):
@@ -62,16 +59,13 @@ class complex(simple):
 # Test scenarios
 
 if __name__ == "__main__":
-
-    # Generate 3 simple passwords
-    var = password(20, 'abcdefghijklmnopqrstuvwxyz0123467589')
+    var = simple(20, 'abcdefghijklmnopqrstuvwxyz0123467589')
     print(var.generate(3))
 
-    # Print the 2nd result out of the 3 passwords generated above
     print(var.result(1))
 
-    stored_password = hash_password('ThisIsAPassWord')
+    stored_password = hash(var.result(1))
     print(stored_password)
 
-    if verify_password(stored_password, 'ThisIsAPassWord') == True:
+    if verify_hash(stored_password, var.result(1)) == True:
         print('The password is correct')
