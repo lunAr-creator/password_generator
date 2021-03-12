@@ -117,7 +117,7 @@ there will be a list containing a 'iteration' number of passwords. Therefore, we
 var.result(1) # Invisible: will not print out anything
 print(var.result(1)) # Visible: will print out
 ```
-
+<br></br>
 Full example:
 
 ```python
@@ -140,7 +140,7 @@ print(var.result(1)) # Visible: will print out
 <summary>Hashing a password</summary>
 <br>
 Hashing a password is very important. If you are storing passwords in files, databases etc it should be the upmost priority to keep password safe from being stolen and then used. A way to prevent this is using hashing. Whilst hackers might still steal it, it would be impossible to reverse engineer a hashed password, meaning that the original password will be safe. We can use the function 'hash' to hash a password. The hash function takes one argument: the password to hash.
-
+<br></br>
 For example:
 
 ```python
