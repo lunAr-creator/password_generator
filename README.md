@@ -55,7 +55,7 @@ To customise and generate our password we must first create an instance of our p
 
 This can be done with either a "simple" password or a "complex" password. Simple passwords can be created by making a "simple" object and assigning 2 parameters: 1 of which is password length, the other is the characters that will be randomised to create it.
 <br>  
-Example:
+Example 1:
 
 ```python
 from password_generator import simple
@@ -65,7 +65,7 @@ var = simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
 
 Now for the second way option. To create a "complex" password we must give the object 4 parameters: password length, string method (lowercase, uppercase or both), numbers (True or False) and special characters (True or False)
 <br></br>
-Example:
+Example 2:
 
 ```python
 from password_generator import complex
