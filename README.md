@@ -13,7 +13,7 @@ Use the package manager [pip]() to install ```pass_gen```
 ## Usage
 ### Simple passwords (Less Arguements)
 ```python
-from password_generator import simple
+from pass_gen import simple
 
 var = simple(20, 'abcdefghijklmnopqrstuvwxyz0123467589')
 
@@ -31,7 +31,7 @@ b6uev6v4dhcbrptj0i89
 ### Complex passwords (More Arguements)
 
 ```python
-from password_generator import complex
+from pass_gen import complex
 
 var = complex(20, 'both', True, False)
 
@@ -58,7 +58,7 @@ This can be done with either a "simple" password or a "complex" password. Simple
 Example 1:
 
 ```python
-from password_generator import simple
+from pass_gen import simple
 
 var = simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
 ```
@@ -68,7 +68,7 @@ Now for the second way option. To create a "complex" password we must give the o
 Example 2:
 
 ```python
-from password_generator import complex
+from pass_gen import complex
 
 var = complex(20, 'both', True, False)
 ```
@@ -84,7 +84,7 @@ To generate a password we have to use the 'generate' method with our object. The
 Example 1:
 
 ```python
-from password_generator import simple
+from pass_gen import simple
 
 var = simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
 
@@ -96,7 +96,7 @@ print(var.generate(3)) # Will generate 3 visible passwords
 
 Example 2:
 ```python
-from password_generator import complex
+from pass_gen import complex
 
 var = complex(20, 'both', True, False)
 
@@ -129,7 +129,7 @@ aorhkux4h1nzv4dt9r12
 Full example:
 
 ```python
-from password_generator import simple
+from pass_gen import simple
 
 var = simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
 
@@ -152,7 +152,7 @@ For example:
 <br></br>
 
 ```python
-from password_generator import simple, hash
+from pass_gen import simple, hash
 
 #Creating a password
 var = simple(20, 'abcdefghijklmnopqrstuvwxyz0123467589')
@@ -181,7 +181,7 @@ Previously, we talked about how to hash a password. Now, we are going to discuss
 Example:
 
 ```python
-from password_generator import simple, hash, verify_hash
+from pass_gen import simple, hash, verify_hash
 
 # Create a new password
 var = simple(20, 'abcdefghijklmnopqrstuvwxyz0123467589')
