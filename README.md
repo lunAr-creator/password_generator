@@ -143,6 +143,7 @@ Hashing a password is very important. If you are storing passwords in files, dat
 <br></br>
 For example:
 <br></br>
+
 ```python
 from password_generator import simple, hash
 
@@ -162,7 +163,6 @@ Output:
 ```
 71bfc946b8d90390fe1879e604a3dbe3f38d16b45d6a4a81de9b3e6085d08ca6956098627c09ef471ac5597955ab860e290dde7feee334f4efa5c235ecb99588d5658b6cd62f30bb5d62050c3bdcd93a6e6319e94d6714d55f997caa8dd34a2d
 ```
-
 </details>
 
 <details>
