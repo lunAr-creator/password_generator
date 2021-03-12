@@ -31,7 +31,6 @@ class complex(simple):
             "both": string.ascii_letters,
         }
 
-
         characters += methods[string_method]
 
         if numbers:
