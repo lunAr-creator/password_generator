@@ -21,9 +21,6 @@ class simple:
     def result(self, num: int) -> None:
         return password_result[num]
 
-    def clear_results(self) -> None:
-        password_result.clear()
-
 class complex(simple):
     def __init__(self, length, string_method, numbers=True, special_chars=False):
         characters = ''
