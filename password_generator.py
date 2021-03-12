@@ -34,9 +34,9 @@ class complex(simple):
         characters += methods[string_method]
 
         if numbers:
-            characters += string.digits
+            characters += string.digit
         if special_chars:
-            characters += string.punctuation
+            characters += string.punctuatio
 
         super().__init__(length=length, characters=characters)
 
@@ -53,7 +53,6 @@ def verify_hash(stored_password, provided_password):
     pwdhash = binascii.hexlify(pwdhash).decode('ascii')
     return pwdhash == stored_password
 
-
 # Test scenarios
 
 if __name__ == "__main__":
@@ -65,5 +64,6 @@ if __name__ == "__main__":
     stored_password = hash(var.result(1))
     print(stored_password)
 
-    if verify_hash(stored_password, var.result(1)) == True:
+    p = input('Password: ')
+    if verify_hash(stored_password, p) == True:
         print('The password is correct')
