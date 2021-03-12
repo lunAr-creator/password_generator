@@ -13,7 +13,7 @@ setup(
   version='0.0.1',
   description='A library for generating secure randomside passwords',
   long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
-  url='',
+  url='https://github.com/lunAr-creator/password_generator',
   author='Soma Benfell',
   author_email='lunArcreator3@gmail.com',
   license='MIT',
