@@ -4,7 +4,7 @@
 
 ## Installation
 
-Use the package manager [pip]() to install ```pass_gen```
+Use the package manager [pip](https://pypi.org/project/pip/) to install ```pass_gen```
 
 ```bash
 (library is not yet published on pypi)
