@@ -113,6 +113,7 @@ print(var.generate(3)) # Will generate 3 visible passwords
 If you have seen the code for this library already, you will probably know that the output passwords are appended to a list as they are created. This means that
 there will be a list containing a 'iteration' number of passwords. Therefore, we can get a specific password from this list using the 'result' method. It takes one parameter: the index of the password. For instance, if I generated 3 passwords, then the index of the second password would be '1'. Therefore, we can get the second output like so:
 <br></br>
+
 ```python
 var.result(1) # Invisible: will not print out anything
 print(var.result(1)) # Visible: will print out
