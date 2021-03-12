@@ -78,7 +78,33 @@ var = complex(20, 'both', True, False)
 <details>
 <summary>Generating a password(s)</summary>
 <br>
-Blank
+To generate a password we have to use the 'generate' method with our object. The generate method requires one parameter: iterations. Iterations refers to the number of passwords the program will output (these will all be different). Furthermore, you can either create invisible passwords (will not print the passwords out) or visible passwords (are visible when running the program). The 'generate' method can be used for both 'simple' and 'complex' passwords. 
+<br></br>
+
+Example 1:
+
+```python
+from password_generator import simple
+
+var = simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
+
+# Generating password
+
+var.generate(3) # Will generate 3 invisble passwords
+print(var.generate(3)) # Will generate 3 visible passwords
+```
+
+Example 2:
+```python
+from password_generator import complex
+
+var = complex(20, 'both', True, False)
+
+# Generating password
+
+var.generate(3) # Will generate 3 invisble passwords
+print(var.generate(3)) # Will generate 3 visible passwords
+```
 </details>
 
 <details>
