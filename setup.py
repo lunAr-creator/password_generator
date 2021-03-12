@@ -21,3 +21,4 @@ setup(
   keywords='password',
   packages=find_packages(),
   install_requires=['']
+)
