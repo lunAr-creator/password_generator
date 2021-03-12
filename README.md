@@ -112,7 +112,7 @@ print(var.generate(3)) # Will generate 3 visible passwords
 <br>
 If you have seen the code for this library already, you will probably know that the output passwords are appended to a list as they are created. This means that
 there will be a list containing a 'iteration' number of passwords. Therefore, we can get a specific password from this list using the 'result' method. It takes one parameter: the index of the password. For instance, if I generated 3 passwords, then the index of the second password would be '1'. Therefore, we can get the second output like so:
-
+<br></br>
 ```python
 var.result(1) # Invisible: will not print out anything
 print(var.result(1)) # Visible: will print out
@@ -142,7 +142,7 @@ print(var.result(1)) # Visible: will print out
 Hashing a password is very important. If you are storing passwords in files, databases etc it should be the upmost priority to keep password safe from being stolen and then used. A way to prevent this is using hashing. Whilst hackers might still steal it, it would be impossible to reverse engineer a hashed password, meaning that the original password will be safe. We can use the function 'hash' to hash a password. The hash function takes one argument: the password to hash.
 <br></br>
 For example:
-
+<br></br>
 ```python
 from password_generator import simple, hash
 
