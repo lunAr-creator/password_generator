@@ -39,7 +39,7 @@ print(var.generate(3))
 print(var.result(1))
 ```
 
-#### Output (Please note that output varys depending on arguements provided)
+#### Output (Please note that output varies depending on arguements provided)
 
 ```
 ['kQ6rbCxq1l7roGlJ5AUs', '0CXTxSWyXdPg3aZkjt7B', 'l4RY1CeRpARqX2uaQGtC']
@@ -118,7 +118,14 @@ there will be a list containing a 'iteration' number of passwords. Therefore, we
 var.result(1) # Invisible: will not print out anything
 print(var.result(1)) # Visible: will print out
 ```
-<br></br>
+
+Output:
+
+```
+['ce08vizthnu6qjkvn092', 'aorhkux4h1nzv4dt9r12', '2vy3w83a14uvja0uye7k']
+aorhkux4h1nzv4dt9r12
+```
+
 Full example:
 
 ```python
@@ -131,7 +138,6 @@ var = simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
 var.generate(3) # Will generate 3 invisble passwords
 print(var.generate(3)) # Will generate 3 visible passwords
 
-var.result(1) # Invisible: will not print out anything
 print(var.result(1)) # Visible: will print out
 ```
 
@@ -167,7 +173,7 @@ Output:
 </details>
 
 <details>
-<summary>Verifying a hashed password</summary>
+<summary>Comparing a hashed password to the original</summary>
 <br>
 Previously, we talked about how to hash a password. Now, we are going to discuss how to verify a hashed password. What is mean is, comparing a hashed password to one that the user provides, and check if the given password is equal to the hashed one. We can do this using the 'varify_hash' function. We
 <br></br>

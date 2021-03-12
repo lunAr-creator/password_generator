@@ -30,13 +30,14 @@ class complex(simple):
             "lower": string.ascii_lowercase,
             "both": string.ascii_letters,
         }
+       
 
         characters += methods[string_method]
 
         if numbers:
             characters += string.digit
         if special_chars:
-            characters += string.punctuatio
+            characters += string.punctuation
 
         super().__init__(length=length, characters=characters)
 
@@ -69,3 +70,4 @@ if __name__ == "__main__":
     p = input('Password: ')
     if verify_hash(stored_password, p) == True:
         print('The password is correct')
+
