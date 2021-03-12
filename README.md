@@ -1,10 +1,10 @@
-# password_generator
+# pass_gen
 
-```password_generator``` is a library for dealing with generating secure randomised passwords that are customisable and strong simultaneously.
+```pass_gen``` is a library for dealing with generating secure randomised passwords that are customisable and strong simultaneously.
 
 ## Installation
 
-Use the package manager [pip]() to install password_generator.
+Use the package manager [pip]() to install ```pass_gen```
 
 ```bash
 (library is not yet published on pypi)
