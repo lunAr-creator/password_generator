@@ -21,4 +21,5 @@ setup(
   keywords='password',
   packages=find_packages(),
   install_requires=['']
+  long_description_content_type="text/markdown"
 )
