@@ -169,7 +169,45 @@ Output:
 <details>
 <summary>Verifying a hashed password</summary>
 <br>
-Blank
+Previously, we talked about how to hash a password. Now, we are going to discuss how to verify a hashed password. What is mean is, comparing a hashed password to one that the user provides, and check if the given password is equal to the hashed one. We can do this using the 'varify_hash' function. We
+<br></br>
+
+Example:
+
+```python
+from password_generator import simple, hash, verify_hash
+
+# Create a new password
+var = simple(20, 'abcdefghijklmnopqrstuvwxyz0123467589')
+
+# Generate new passwords
+print(var.generate(3))
+
+# Select a password and print it
+print(var.result(1))
+
+# Hash the password we have selected
+stored_password = hash(var.result(1))
+print(stored_password)
+
+# Have user input for a password, if it is equal to the hashed password then print('The password is correct')
+p = input('Password: ')
+if verify_hash(stored_password, p) == True:
+    print('The password is correct')
+```
+
+<br></br>
+
+Output:
+
+```
+['ce08vizthnu6qjkvn092', 'aorhkux4h1nzv4dt9r12', '2vy3w83a14uvja0uye7k']
+aorhkux4h1nzv4dt9r12
+44bba1d156ace3ce5447a43d4c83b8a88947cd610ccfc48366003b67a3729d81216752948958e3074c33f789db27fb359775dc07bcb176db9b7a99237995eb029b9e509ba003d7e259465aa02db888e9b31f84bc3c3e7fa507bb481e48b6f7e8
+Password: aorhkux4h1nzv4dt9r12
+The password is correct
+```
+
 </details>
 
 <br></br>
