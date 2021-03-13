@@ -162,7 +162,7 @@ print(var.generate(3))
 
 # We get the password using the 'result' method I covered earlier.
 hashed_password = hash(var.result(1))
-print(hash(hashed_password) # print the result of the hashed password
+print(hash(hashed_password)) # print the result of the hashed password
 ```
 
 Output:
