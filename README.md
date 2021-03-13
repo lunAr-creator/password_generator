@@ -11,7 +11,7 @@ pip install pw-gen
 ```
 <br></br>
 ## Usage
-### Simple passwords (Less Arguements)
+### Simple passwords (Less Arguments)
 ```python
 from pw_gen import simple
 
@@ -21,14 +21,14 @@ print(var.generate(3))
 print(var.result(1))
 ```
 
-#### Output (Please note that output varies depending on arguements provided)
+#### Output (Please note that output varies depending on arguments provided)
 
 ```
 ['mr3s7swtr1k0l6as2m9a', 'b6uev6v4dhcbrptj0i89', 'q7gy2xm6szpyj1snbmz6']
 b6uev6v4dhcbrptj0i89
 ```
 
-### Complex passwords (More Arguements)
+### Complex passwords (More Arguments)
 
 ```python
 from pw_gen import complex
@@ -39,7 +39,7 @@ print(var.generate(3))
 print(var.result(1))
 ```
 
-#### Output (Please note that output varies depending on arguements provided)
+#### Output (Please note that output varies depending on arguments provided)
 
 ```
 ['kQ6rbCxq1l7roGlJ5AUs', '0CXTxSWyXdPg3aZkjt7B', 'l4RY1CeRpARqX2uaQGtC']
