@@ -86,7 +86,11 @@ Example 1:
 ```python
 from pw_gen import simple
 
-var = simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
+var = Simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
+
+#or
+
+var = Simple(20) 
 
 # Generating password
 
@@ -139,79 +143,6 @@ var.generate(3) # Will generate 3 invisble passwords
 print(var.generate(3)) # Will generate 3 visible passwords
 
 print(var.result(1)) # Visible: will print out
-```
-
-</details>
-
-<details>
-<summary>Hashing a password</summary>
-<br>
-Hashing a password is very important. If you are storing passwords in files, databases etc it should be the upmost priority to keep password safe from being stolen and then used. A way to prevent this is using hashing. Whilst hackers might still steal it, it would be impossible to reverse engineer a hashed password, meaning that the original password will be safe. We can use the function 'hash' to hash a password. The hash function takes one argument: the password to hash.
-<br></br>
-For example:
-<br></br>
-
-```python
-from pw_gen import simple, hash
-
-#Creating a password
-var = simple(20, 'abcdefghijklmnopqrstuvwxyz0123467589')
-
-# Generating a password
-print(var.generate(3))
-
-# We get the password using the 'result' method I covered earlier.
-hashed_password = hash(var.result(1))
-print(hash(hashed_password)) # print the result of the hashed password
-```
-
-Output:
-
-```
-71bfc946b8d90390fe1879e604a3dbe3f38d16b45d6a4a81de9b3e6085d08ca6956098627c09ef471ac5597955ab860e290dde7feee334f4efa5c235ecb99588d5658b6cd62f30bb5d62050c3bdcd93a6e6319e94d6714d55f997caa8dd34a2d
-```
-</details>
-
-<details>
-<summary>Comparing a hashed password to the original</summary>
-<br>
-Previously, we talked about how to hash a password. Now, we are going to discuss how to verify a hashed password. What is mean is, comparing a hashed password to one that the user provides, and check if the given password is equal to the hashed one. We can do this using the 'varify_hash' function. We
-<br></br>
-
-Example:
-
-```python
-from pw_gen import simple, hash, verify_hash
-
-# Create a new password
-var = simple(20, 'abcdefghijklmnopqrstuvwxyz0123467589')
-
-# Generate new passwords
-print(var.generate(3))
-
-# Select a password and print it
-print(var.result(1))
-
-# Hash the password we have selected
-stored_password = hash(var.result(1))
-print(stored_password)
-
-# Have user input for a password, if it is equal to the hashed password then print('The password is correct')
-p = input('Password: ')
-if verify_hash(stored_password, p) == True:
-    print('The password is correct')
-```
-
-<br></br>
-
-Output:
-
-```
-['ce08vizthnu6qjkvn092', 'aorhkux4h1nzv4dt9r12', '2vy3w83a14uvja0uye7k']
-aorhkux4h1nzv4dt9r12
-44bba1d156ace3ce5447a43d4c83b8a88947cd610ccfc48366003b67a3729d81216752948958e3074c33f789db27fb359775dc07bcb176db9b7a99237995eb029b9e509ba003d7e259465aa02db888e9b31f84bc3c3e7fa507bb481e48b6f7e8
-Password: aorhkux4h1nzv4dt9r12
-The password is correct
 ```
 
 </details>
