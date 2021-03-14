@@ -72,15 +72,3 @@ class Memorable(Complex):
                     password += secrets.choice(string.digits)
             password_result.append(password)
         return password_result
-
-# Test scenarios
-
-if __name__ == "__main__":
-    var = Simple(20)
-    print(var.generate(3))
-
-    print(var.result(1))
-
-    var2 = Memorable()
-    print(var2.generate_memorable(3))
-    print(var2.result(1))
