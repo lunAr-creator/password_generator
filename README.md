@@ -197,6 +197,16 @@ print(var.return_result(1)) # Visible: will print out
 ```
 
 </details>
+<details>
+<summary>Deleting the list of output passwords</summary>
+<br>
+blank
+<br></br>
+
+
+
+</details>
+
 <br></br>
 
 ## Contributing
