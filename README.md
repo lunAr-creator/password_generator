@@ -13,12 +13,12 @@ pip install pw-gen
 ## Usage
 ### Simple passwords (Less Arguments)
 ```python
-from pw_gen import simple
+from pw_gen import Simple
 
-var = simple(20, 'abcdefghijklmnopqrstuvwxyz0123467589')
+var = Simple(20) 
 
 print(var.generate(3))
-print(var.result(1))
+print(var.return_result(1))
 ```
 
 #### Output (Please note that output varies depending on arguments provided)
@@ -31,12 +31,12 @@ b6uev6v4dhcbrptj0i89
 ### Complex passwords (More Arguments)
 
 ```python
-from pw_gen import complex
+from pw_gen import Complex
 
-var = complex(20, 'both', True, False)
+var = Complex(20, 'both', True, False)
 
 print(var.generate(3))
-print(var.result(1))
+print(var.return_result(1))
 ```
 
 #### Output (Please note that output varies depending on arguments provided)
@@ -44,6 +44,25 @@ print(var.result(1))
 ```
 ['kQ6rbCxq1l7roGlJ5AUs', '0CXTxSWyXdPg3aZkjt7B', 'l4RY1CeRpARqX2uaQGtC']
 0CXTxSWyXdPg3aZkjt7B
+```
+
+
+### Memorable passwords (Easy to remember)
+
+```python
+from pw_gen import Memorable
+
+var = Memorable(True)
+
+print(var.generate(3))
+print(var.return_result(1))
+```
+
+#### Output (Please note that output varies depending on arguments provided)
+
+```
+['DappleStrenuous7169', 'FriedmanAnimal1504', 'PowellBilabial799']
+FriedmanAnimal1504
 ```
 <br></br>
 ## Creating passwords - In depth
@@ -53,14 +72,18 @@ print(var.result(1))
 <br>
 To customise and generate our password we must first create an instance of our password.
 
-This can be done with either a "simple" password or a "complex" password. Simple passwords can be created by making a "simple" object and assigning 2 parameters: 1 of which is password length, the other is the characters that will be randomised to create it.
+This can be done with either a "simple", "complex" or memorable password. Simple passwords can be created by making a "simple" object and assigning 2 parameters: 1 of which is password length, the other is the characters that will be randomised to create it (characters is an optional parameter - you can leave it out and the password will be customised to use ```ascii_letters``` and ```ascii_digits```.
 <br>  
 Example 1:
 
 ```python
-from pw_gen import simple
+from pw_gen import Simple
 
-var = simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
+var = Simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
+
+#or
+
+var = Simple(20)
 ```
 
 Now for the second way option. To create a "complex" password we must give the object 4 parameters: password length, string method (lowercase, uppercase or both), numbers (True or False) and special characters (True or False)
@@ -68,9 +91,23 @@ Now for the second way option. To create a "complex" password we must give the o
 Example 2:
 
 ```python
-from pw_gen import complex
+from pw_gen import Complex
 
-var = complex(20, 'both', True, False)
+var = Complex(20, 'both', True, False)
+```
+
+Finally we have the last type of password: memorable. It takes one arguement (numbers) and it is whether to include numbers in the password (this defaults to True but can be changed to false)
+<br></br>
+Example 2:
+
+```python
+from pw_gen import Memorable
+
+var = Memorable() #defaulted to numbers
+
+#or
+
+var = Memorable(False) #no numbers 
 ```
 
 </details>
@@ -78,13 +115,13 @@ var = complex(20, 'both', True, False)
 <details>
 <summary>Generating a password(s)</summary>
 <br>
-To generate a password we have to use the 'generate' method with our object. The generate method requires one parameter: iterations. Iterations refers to the number of passwords the program will output (these will all be different). Furthermore, you can either create invisible passwords (will not print the passwords out) or visible passwords (are visible when running the program). The 'generate' method can be used for both 'simple' and 'complex' passwords.
+To generate a password we have to use the 'generate' method with our object. The generate method requires one parameter: ```num_of_passwords```. ```num_of_passwords``` refers to the number of outputs (these will all be different). Furthermore, you can either create invisible passwords (will not print the passwords out) or visible passwords (are visible when running the program). The 'generate' method can be used for both 'Simple', 'Complex' and 'Memorable' passwords.
 <br></br>
 
 Example 1:
 
 ```python
-from pw_gen import simple
+from pw_gen import Simple
 
 var = Simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
 
@@ -100,9 +137,9 @@ print(var.generate(3)) # Will generate 3 visible passwords
 
 Example 2:
 ```python
-from pw_gen import complex
+from pw_gen import Complex
 
-var = complex(20, 'both', True, False)
+var = Complex(20, 'both', True, False)
 
 # Generating password
 
@@ -115,12 +152,12 @@ print(var.generate(3)) # Will generate 3 visible passwords
 <summary>Getting a specific password from the ones generated</summary>
 <br>
 If you have seen the code for this library already, you will probably know that the output passwords are appended to a list as they are created. This means that
-there will be a list containing a 'iteration' number of passwords. Therefore, we can get a specific password from this list using the 'result' method. It takes one parameter: the index of the password. For instance, if I generated 3 passwords, then the index of the second password would be '1'. Therefore, we can get the second output like so:
+there will be a list containing a 'iteration' number of passwords. Therefore, we can get a specific password from this list using the 'return_result' method. It takes one parameter: the index of the password. For instance, if I generated 3 passwords, then the index of the second password would be '1'. Therefore, we can get the second output like so:
 <br></br>
 
 ```python
 var.result(1) # Invisible: will not print out anything
-print(var.result(1)) # Visible: will print out
+print(var.return_result(1)) # Visible: will print out
 ```
 
 Output:
@@ -133,7 +170,7 @@ aorhkux4h1nzv4dt9r12
 Full example:
 
 ```python
-from pw_gen import simple
+from pw_gen import Simple
 
 var = simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
 
@@ -142,12 +179,10 @@ var = simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
 var.generate(3) # Will generate 3 invisble passwords
 print(var.generate(3)) # Will generate 3 visible passwords
 
-print(var.result(1)) # Visible: will print out
+print(var.return_result(1)) # Visible: will print out
 ```
 
 </details>
-
-<br></br>
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
