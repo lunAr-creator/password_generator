@@ -102,3 +102,6 @@ class Memorable(Simple):
 if __name__ == "__main__":
     var = Memorable()
     print(var.generate(3))
+
+    var2 = Complex(100, 'both', True, True)
+    print(var2.generate(1))
