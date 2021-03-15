@@ -98,7 +98,7 @@ var = Complex(20, 'both', True, False)
 
 Finally we have the last type of password: memorable. It takes one arguement (numbers) and it is whether to include numbers in the password (this defaults to True but can be changed to false)
 <br></br>
-Example 2:
+Example 3:
 
 ```python
 from pw_gen import Memorable
@@ -146,6 +146,20 @@ var = Complex(20, 'both', True, False)
 var.generate(3) # Will generate 3 invisble passwords
 print(var.generate(3)) # Will generate 3 visible passwords
 ```
+
+Example 3:
+
+```python
+from pw_gen import Memorable
+
+var = Memorable()
+
+# Generating password
+
+var.generate(3) # Will generate 3 invisble passwords
+print(var.generate(3)) # Will generate 3 visible passwords
+```
+
 </details>
 
 <details>
@@ -183,6 +197,7 @@ print(var.return_result(1)) # Visible: will print out
 ```
 
 </details>
+<br></br>
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
