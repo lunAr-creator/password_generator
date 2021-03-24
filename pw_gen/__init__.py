@@ -100,8 +100,14 @@ class Memorable(Simple):
 # Test Scenarios
 
 if __name__ == "__main__":
-    var = Memorable()
-    print(var.generate(6))
+    var = Simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
 
-    var2 = Complex(100, 'both', True, True)
-    print(var2.generate(1))
+    var.generate(3) # Will generate 3 invisble passwords
+    print(var.generate(3)) # Will generate 3 visible passwords
+
+    print(var.return_result(1)) # Visible: will print out
+
+    var.clear_results() # Clear the list of output passwords.
+    print(var.generate(3)) # Will generate 3 visible passwords
+
+    print(var.return_result(1)) # Visible: will print out
