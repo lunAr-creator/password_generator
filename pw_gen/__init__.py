@@ -36,7 +36,7 @@ class Simple():
         try:
             return self.output[index]
         except IndexError:
-            print(f'Incorrect index specified. Please provide an index relevant to the number of passwords generated')
+            print('Incorrect index specified. Please provide an index relevant to the number of passwords generated')
 
     def clear_results(self):
         '''Clears the output list if you want to make way for new passwords'''
@@ -101,7 +101,7 @@ class Memorable(Simple):
 
 if __name__ == "__main__":
     var = Memorable()
-    print(var.generate(3))
+    print(var.generate(6))
 
     var2 = Complex(100, 'both', True, True)
     print(var2.generate(1))
