@@ -200,11 +200,14 @@ print(var.return_result(1)) # Visible: will print out
 <details>
 <summary>Deleting the list of output passwords</summary>
 <br>
+  
 <br></br>
 This method is used if you want to clear your output. This is because everytime you generate a type of password, it will append it to a specific list for that type of password. If you would like to generate some new passwords and you want a fresh output, we have to use the 'clear_results' method. This is entirely optional, if you want to keep appending new passwords to the same list you **can**.
 <br></br>
 Example of using clear_results':
+
 <br></br>
+
 ```python
 from pw_gen import Simple
 
