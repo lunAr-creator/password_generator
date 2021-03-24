@@ -186,7 +186,7 @@ Full example:
 ```python
 from pw_gen import Simple
 
-var = simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
+var = Simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
 
 # Generating password
 
@@ -202,8 +202,36 @@ print(var.return_result(1)) # Visible: will print out
 <br>
 blank
 <br></br>
+This method is used if you want to clear your output. This is because everytime you generate a type of password, it will append it to a specific list for that type of password. If you would like to generate some new passwords and you want a fresh output, we have to use the 'clear_results' method. This is entirely optional, if you want to keep appending new passwords to the same list you **can**.
 
+Example of using sclear_results':
 
+```python
+from pw_gen import Simple
+
+var = Simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
+
+# Generating password
+
+print(var.generate(3)) # Will generate 3 visible passwords
+
+print(var.return_result(1)) # Visible: will print out
+
+var.clear_results() # Clear the list of output passwords. 
+print(var.generate(3)) # Will generate 3 visible passwords
+
+print(var.return_result(1)) # Visible: will print out
+```
+
+Output:
+
+```
+['v1lt3hqpiz4az2mllq5t', 'xtbfqwsumx3qq0zwub79', 'wbg132by7iruxcit9a0z']
+qc3ad5mc9dzpavqkhigy
+
+['1hh294btvap6av5b86pv', 'h7o4qbi3c42hygcujh39', '5s5zq30odlxnufgbxb6m']
+h7o4qbi3c42hygcujh39
+```
 
 </details>
 
