@@ -11,6 +11,11 @@ Use the package manager [pip](https://pypi.org/project/pip/) to install pw-gen.
 ```bash
 pip install pw-gen
 ```
+#### If you are still using the old version of ```pw-gen```:
+
+```bash
+pip install --upgrade pw-gen
+```
 <br></br>
 ## Usage
 ### Simple passwords (Less Arguments)
