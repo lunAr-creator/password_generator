@@ -5,15 +5,14 @@ import urllib.request
 
 class Simple():
     def __init__(self, length: int, characters = None):
-        '''A simple password'''
+        '''A simple password (less arguments compared to complex)'''
         self.length = length
         self.characters = characters
         self.output = []
 
     def generate(self, num_of_passwords: int):
         '''
-        Generates a password depending on the num_of_passwords
-        and the arugments provided in the simple class
+        Generates a password depending on the num_of_passwords and the arugments provided in the simple class
         '''
         characters = ''
         if self.characters is None:
@@ -30,8 +29,7 @@ class Simple():
 
     def return_result(self, index: int):
         '''
-        Returns the password which is at the specified index
-        in the output list.
+        Returns the password which is at the specified index in the output list.
         '''
         try:
             return self.output[index]
@@ -45,8 +43,7 @@ class Simple():
 class Complex(Simple):
     def __init__(self, length, string_method, numbers=True, special_chars=False):
         '''
-        Creates a customisable password depending on length,
-        string_method, numbers and special_chars
+        Creates a customisable password depending on length, string_method, numbers and special_chars
         '''
         characters = ''
         self.output = []
@@ -68,7 +65,7 @@ class Complex(Simple):
 
 class Memorable(Simple):
     def __init__(self, numbers=True):
-        '''A memorable password'''
+        '''A memorable password e.g HelloWorld123'''
         self.numbers = numbers
         self.output = []
 
@@ -82,8 +79,7 @@ class Memorable(Simple):
         words = long_txt.splitlines()
 
         '''
-        Generates the password containing 2 words
-        and numbers if self.numbers == True
+        Generates the password containing 2 words and numbers if self.numbers == True
         '''
         for i in range(num_of_passwords):
             password = ''
@@ -97,17 +93,19 @@ class Memorable(Simple):
             self.output.append(password)
         return self.output
 
-# Test Scenarios
+class Pin(Simple):
+    def __init__(self, length):
+        '''Customise a pin (consisting of numbers) with specified length'''
+        self.length = length
+        self.output = []
 
-if __name__ == "__main__":
-    var = Simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
+    def generate(self, num_of_pins: int):
+        '''Generate the specified number of pins'''
+        for i in range(num_of_pins):
+            pin = ''
+            for c in range(self.length):
+                pin += secrets.choice(string.digits)
+            self.output.append(pin)
+        return self.output
 
-    var.generate(3) # Will generate 3 invisble passwords
-    print(var.generate(3)) # Will generate 3 visible passwords
-
-    print(var.return_result(1)) # Visible: will print out
-
-    var.clear_results() # Clear the list of output passwords.
-    print(var.generate(3)) # Will generate 3 visible passwords
-
-    print(var.return_result(1)) # Visible: will print out
+        super().__init__(length=length)
