@@ -107,6 +107,3 @@ class Pin(Simple):
                 pin += secrets.choice(string.digits)
             self.output.append(pin)
         return self.output
-
-var = Pin(4)
-print(var.generate(3))
