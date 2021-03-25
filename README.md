@@ -1,5 +1,5 @@
 # pw-gen
-[![Downloads](https://pepy.tech/badge/pw-gen)](https://pepy.tech/project/pw-gen) ![Version](https://img.shields.io/badge/version-0.0.2-blue)
+[![Downloads](https://pepy.tech/badge/pw-gen)](https://pepy.tech/project/pw-gen) ![Version](https://img.shields.io/badge/version-0.0.5-blue)
 
 
 ```pw-gen``` is a library for dealing with generating secure randomised passwords that are customisable and strong simultaneously.
@@ -115,6 +115,26 @@ var = Memorable() #defaulted to numbers
 #or
 
 var = Memorable(False) #no numbers
+```
+
+Extras (Pin generation):
+
+This will generate pins (a random set of numbers) depending on length given and the number of passwords asked for:
+
+```python
+from pw_gen import Pin
+
+var = Pin(4) # Making an object and setting length
+
+print(var.generate(3)) # Generating the password
+print(var.return_result(1)) # Returning the second result
+var.clear_results() # Clearing the list of results 
+```
+Output:
+
+```
+['4854', '5587', '1374']
+5587
 ```
 
 </details>
