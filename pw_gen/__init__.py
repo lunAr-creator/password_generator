@@ -108,4 +108,5 @@ class Pin(Simple):
             self.output.append(pin)
         return self.output
 
-        super().__init__(length=length)
+var = Pin(4)
+print(var.generate(3))
