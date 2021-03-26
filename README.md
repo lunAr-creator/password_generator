@@ -16,8 +16,11 @@ pip install pw-gen
 ```bash
 pip install --upgrade pw-gen
 ```
+
+> **_NOTE:_**  If you are still using older versions of **pw-gen** please download the latest version as examples in this README will likely be incorrect for old versions. Thankyou.
+
 <br></br>
-## Usage
+## Basic usage
 ### Simple passwords (Less Arguments)
 ```python
 from pw_gen import Simple
@@ -87,6 +90,21 @@ from pw_gen import Simple
 
 var1 = Simple(20) # Specifying password length to 20 and characters will default to letters and numbers
 var2 = Simple(20, 'abcdefghijklmnopqrstuvwxyz') # Specifying password length to 20 and characters will be set to the ones specified.
+```
+
+Complex passwords require 2 mandatory parameters and 2 optional parameters. Param 1 is password length (an int), param 2 is string_method. **string_method** refers to **upper** (upper case), **lower** (lowercase) and **both** (uppercase and lowercase). These arguements should be **strings**. The last two parameters are **include_numbers** (defaults to **True**) and **include_special_chars** (defaults to **False**). These are **keyword-only** parameters. They can be set to **True** or **False**. Therefore, they must be explicitly stated. E.g ```arg=bool``` Example of how to create a **Complex** password:
+
+```python
+from pw_gen import Complex
+
+var = Complex(20, 'both', include_numbers=True, include_special_chars=True)
+```
+Lastly, a Memorable password is a password that can be easily remembered. It uses 2 random words from the ```random_word``` library. It then gets 3-4 random numbers and adds them to the end of the password. We can create a **Memorable** password by assigning 1 parameter which is **include_numbers** (this defaults to **True**). Example of how to create a **Memorable** password:
+
+```python
+from pw_gen import Memorable
+
+var = Memorable()
 ```
 
 </details>
