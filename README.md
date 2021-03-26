@@ -111,125 +111,47 @@ var = Memorable()
 
 <details>
 <summary>Generating a password(s)</summary>
+  
 <br>
-To generate a password we have to use the 'generate' method with our object. The generate method requires one parameter: ```num_of_passwords```. ```num_of_passwords``` refers to the number of outputs (these will all be different). Furthermore, you can either create invisible passwords (will not print the passwords out) or visible passwords (are visible when running the program). The 'generate' method can be used for both 'Simple', 'Complex' and 'Memorable' passwords.
-<br></br>
 
-Example 1:
+To generate a password we have to use the 'generate' method with our object. The generate method requires no parameters. To generate a password, we will first have to create an object (see **Creating a password**). We then use the ```generate``` method as seen in the example below:
 
 ```python
-from pw_gen import Simple
+from pw_gen import {insert password type}
 
-var = Simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
+var = {insert password type}(args)
+var.generate()
 
-#or
+# or
 
-var = Simple(20)
-
-# Generating password
-
-var.generate(3) # Will generate 3 invisble passwords
-print(var.generate(3)) # Will generate 3 visible passwords
+print(var.generate)
 ```
 
-Example 2:
-```python
-from pw_gen import Complex
-
-var = Complex(20, 'both', True, False)
-
-# Generating password
-
-var.generate(3) # Will generate 3 invisble passwords
-print(var.generate(3)) # Will generate 3 visible passwords
-```
-
-Example 3:
+To generate **muliple** passwords we can use a for loop:
 
 ```python
-from pw_gen import Memorable
+from pw_gen import {insert password type}
 
-var = Memorable()
-
-# Generating password
-
-var.generate(3) # Will generate 3 invisble passwords
-print(var.generate(3)) # Will generate 3 visible passwords
+var = {insert password type}(args)
+for i in range(INSERT NUM):
+  print(var.generate())
 ```
 
 </details>
 
 <details>
-<summary>Getting a specific password from the ones generated</summary>
-<br>
-If you have seen the code for this library already, you will probably know that the output passwords are appended to a list as they are created. This means that
-there will be a list containing a 'iteration' number of passwords. Therefore, we can get a specific password from this list using the 'return_result' method. It takes one parameter: the index of the password. For instance, if I generated 3 passwords, then the index of the second password would be '1'. Therefore, we can get the second output like so:
-<br></br>
+<summary>Returning a password</summary>
 
-```python
-var.return_result(1) # Invisible: will not print out anything
-print(var.return_result(1)) # Visible: will print out
-```
-
-Output:
-
-```
-['ce08vizthnu6qjkvn092', 'aorhkux4h1nzv4dt9r12', '2vy3w83a14uvja0uye7k']
-aorhkux4h1nzv4dt9r12
-```
-
-Full example:
-
-```python
-from pw_gen import Simple
-
-var = Simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
-
-# Generating password
-
-var.generate(3) # Will generate 3 invisble passwords
-print(var.generate(3)) # Will generate 3 visible passwords
-
-print(var.return_result(1)) # Visible: will print out
-```
-
-</details>
-<details>
-<summary>Deleting the list of output passwords</summary>
 <br>
 
-<br></br>
-This method is used if you want to clear your output. This is because everytime you generate a type of password, it will append it to a specific list for that type of password. If you would like to generate some new passwords and you want a fresh output, we have to use the ```clear_results``` method. This is entirely optional, if you want to keep appending new passwords to the same list you **can**.
-
-Example of using ```clear_results```:
-
-<br></br>
+To return a generate password we can simple use the ```result()``` method:
 
 ```python
-from pw_gen import Simple
+from pw_gen import {insert password type}
 
-var = Simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
-
-# Generating password
-
-print(var.generate(3)) # Will generate 3 visible passwords
-
-print(var.return_result(1)) # Visible: will print out
-
-var.clear_results() # Clear the list of output passwords.
-print(var.generate(3)) # Will generate 3 visible passwords
-
-print(var.return_result(1)) # Visible: will print out
-```
-
-Output:
-
-```
-['v1lt3hqpiz4az2mllq5t', 'xtbfqwsumx3qq0zwub79', 'wbg132by7iruxcit9a0z']
-qc3ad5mc9dzpavqkhigy
-
-['1hh294btvap6av5b86pv', 'h7o4qbi3c42hygcujh39', '5s5zq30odlxnufgbxb6m']
-h7o4qbi3c42hygcujh39
+var = {insert password type}(args)
+print(var.generate())
+print(var.result())
 ```
 
 </details>
