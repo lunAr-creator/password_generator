@@ -16,7 +16,7 @@ pip install pw-gen
 ```bash
 pip install --upgrade pw-gen
 ```
-
+<br></br>
 > **_NOTE:_**  If you are still using older versions of **pw-gen** please download the latest version as examples in this README will likely be incorrect for old versions. Thankyou.
 
 <br></br>
@@ -144,7 +144,7 @@ for i in range(INSERT NUM):
 
 <br>
 
-To return a generate password we can simple use the ```result()``` method:
+To return a generated password we can simple use the ```result()``` method:
 
 ```python
 from pw_gen import {insert password type}
