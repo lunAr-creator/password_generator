@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: pw-gen
-Version: 0.0.5
+Version: 0.0.7
 Summary: A library for generating secure passwords
 Home-page: https://github.com/lunAr-creator/password_generator
 Author: Soma Benfell
@@ -15,19 +15,19 @@ Description: A library for generating secure randomised passwords.
         
         var = Simple(20)
         
-        print(var.generate(3))
+        print(var.generate())
         
-        print(var.return_result(1))
+        print(var.result())
         
         Usage (Complex password):
         -------------------------
         from pw_gen import Complex
         
-        var = Complex(20, 'both', True, False)
+        var = Complex(20, 'both', include_numbers=True, include_special_chars=False)
         
-        print(var.generate(3))
+        print(var.generate())
         
-        print(var.return_result(1))
+        print(var.result())
         
         Usage (Memorable password):
         ---------------------------
@@ -35,9 +35,9 @@ Description: A library for generating secure randomised passwords.
         
         var = Memorable(True)
         
-        print(var.generate(3))
+        print(var.generate())
         
-        print(var.return_result(1))
+        print(var.result())
         
         
         Change Log
@@ -49,7 +49,7 @@ Description: A library for generating secure randomised passwords.
         
         0.0.2 (24/03/2021)
         -------------------
-        - Second Release
+        - Added additional functionality
         
         0.0.3 (25/03/2021)
         -------------------
@@ -61,7 +61,17 @@ Description: A library for generating secure randomised passwords.
         
         0.0.5 (25/03/2021)
         -------------------
-        - Fifth Release
+        - Added Pin class
+        
+        0.0.6 (25/03/2021)
+        -------------------
+        - Refactored code
+        - Removed Pin class
+        - Added Random-Word library
+        
+        0.0.7 (25/03/2021)
+        -------------------
+        - Included PyYAML as a requirement (forgot to add it)
         
 Keywords: password
 Platform: UNKNOWN

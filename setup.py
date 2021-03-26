@@ -10,7 +10,7 @@ classifiers = [
 
 setup(
   name='pw_gen',
-  version='0.0.6',
+  version='0.0.7',
   description='A library for generating secure passwords',
   long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
   url='https://github.com/lunAr-creator/password_generator',
@@ -20,5 +20,5 @@ setup(
   classifiers=classifiers,
   keywords='password',
   packages=find_packages(),
-  install_requires=['Random-Word']
+  install_requires=['Random-Word', 'PyYAML']
 )
