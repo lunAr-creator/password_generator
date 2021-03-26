@@ -30,3 +30,7 @@ Change Log
 0.0.7 (25/03/2021)
 -------------------
 - Included PyYAML as a requirement (forgot to add it)
+
+0.0.8 (25/03/2021)
+-------------------
+- Fixed bug for Memorable passwords

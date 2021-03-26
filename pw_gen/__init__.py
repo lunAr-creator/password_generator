@@ -70,6 +70,8 @@ class Memorable(Simple):
         Generates the password containing 2 words and numbers if self.numbers == True
         '''
 
+        del(self.output)
+        self.output = ''
         password = ''
         two_words = ''
         for i in range(2):
