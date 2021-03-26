@@ -24,15 +24,14 @@ from pw_gen import Simple
 
 var = Simple(20)
 
-print(var.generate(3))
-print(var.return_result(1))
+print(var.generate())
+print(var.result())
 ```
 
 #### Output (Please note that output varies depending on arguments provided)
 
 ```
-['mr3s7swtr1k0l6as2m9a', 'b6uev6v4dhcbrptj0i89', 'q7gy2xm6szpyj1snbmz6']
-b6uev6v4dhcbrptj0i89
+pcWW1QjppIWkzErqjdh8
 ```
 
 ### Complex passwords (More Arguments)
@@ -40,17 +39,16 @@ b6uev6v4dhcbrptj0i89
 ```python
 from pw_gen import Complex
 
-var = Complex(20, 'both', True, False)
+var = Complex(20, 'both', include_numbers=True, include_special_chars=False)
 
-print(var.generate(3))
-print(var.return_result(1))
+print(var.generate())
+print(var.result())
 ```
 
 #### Output (Please note that output varies depending on arguments provided)
 
 ```
-['kQ6rbCxq1l7roGlJ5AUs', '0CXTxSWyXdPg3aZkjt7B', 'l4RY1CeRpARqX2uaQGtC']
-0CXTxSWyXdPg3aZkjt7B
+\{=~#YR>XR@N+Q3K{WFB
 ```
 
 
@@ -61,80 +59,34 @@ from pw_gen import Memorable
 
 var = Memorable(True)
 
-print(var.generate(3))
-print(var.return_result(1))
+print(var.generate())
+print(var.result())
 ```
 
 #### Output (Please note that output varies depending on arguments provided)
 
 ```
-['DappleStrenuous7169', 'FriedmanAnimal1504', 'PowellBilabial799']
-FriedmanAnimal1504
+CobrandFlint0825
 ```
+
 <br></br>
-## Creating passwords - In depth
+## Creating passwords - An in depth explantation
 
 <details>
 <summary>Creating a password</summary>
+  
 <br>
-To customise and generate our password we must first create an instance of our password.
 
-This can be done with either a "simple", "complex" or memorable password. Simple passwords can be created by making a "simple" object and assigning 2 parameters: 1 of which is password length, the other is the characters that will be randomised to create it (characters is an optional parameter - you can leave it out and the password will be customised to use ```ascii_letters``` and ```ascii_digits```.
-<br>  
-Example 1:
+To customise and generate our password we must first create an instance of our password. This can be acheived by doing **var_name = type_of_password(args)**. This template can be used for all password types. At the moment, there are three varations of a password **Simple, Complex and Memorable**. 
+  
+ 
+Simple password require less arguements than a complex password, and it is also a base class that all other variations are derived from. To make a **Simple** password, we can assign to parameters: one of which is mandatory and the other one is optional. The first parameter is password length. This should be an integer. The second one is characters. It defaults to a string of ascii_letters and ascii_digits. However, you can overwrite this by specifying your own as a **string**. Example of how to create a **Simple** password:
 
 ```python
 from pw_gen import Simple
 
-var = Simple(20, 'abcdfghijklmnopqrstuvwxyz0123456789')
-
-#or
-
-var = Simple(20)
-```
-
-Now for the second way option. To create a "complex" password we must give the object 4 parameters: password length, string method (lowercase, uppercase or both), numbers (True or False) and special characters (True or False)
-<br></br>
-Example 2:
-
-```python
-from pw_gen import Complex
-
-var = Complex(20, 'both', True, False)
-```
-
-Finally we have the last type of password: memorable. It takes one arguement (numbers) and it is whether to include numbers in the password (this defaults to True but can be changed to false)
-<br></br>
-Example 3:
-
-```python
-from pw_gen import Memorable
-
-var = Memorable() #defaulted to numbers
-
-#or
-
-var = Memorable(False) #no numbers
-```
-
-Extras (Pin generation):
-
-This will generate pins (a random set of numbers) depending on length given and the number of passwords asked for:
-
-```python
-from pw_gen import Pin
-
-var = Pin(4) # Making an object and setting length
-
-print(var.generate(3)) # Generating the password
-print(var.return_result(1)) # Returning the second result
-var.clear_results() # Clearing the list of results 
-```
-Output:
-
-```
-['4854', '5587', '1374']
-5587
+var1 = Simple(20) # Specifying password length to 20 and characters will default to letters and numbers
+var2 = Simple(20, 'abcdefghijklmnopqrstuvwxyz') # Specifying password length to 20 and characters will be set to the ones specified.
 ```
 
 </details>
