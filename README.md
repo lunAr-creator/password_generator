@@ -1,5 +1,5 @@
 # pw-gen
-[![Downloads](https://pepy.tech/badge/pw-gen)](https://pepy.tech/project/pw-gen) ![Version](https://img.shields.io/badge/version-0.0.8-blue)
+[![Downloads](https://pepy.tech/badge/pw-gen)](https://pepy.tech/project/pw-gen) ![Version](https://img.shields.io/badge/version-0.0.8-blue) 
 
 
 ```pw-gen``` is a library for dealing with generating secure randomised passwords that are customisable and strong simultaneously.
