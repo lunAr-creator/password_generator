@@ -35,7 +35,7 @@ class Simple():
 class Complex(Simple):
     def __init__(self, length, string_method, *, include_numbers=True, include_special_chars=False):
         '''
-        Creates a customisable password depending on length, string_method, numbers and special characters
+        Creates a customisable password depending on length, string_method, numbers and special_chars
         '''
         characters = ''
         self.output = ''
