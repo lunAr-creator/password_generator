@@ -35,7 +35,7 @@ class Simple():
 class Complex(Simple):
     def __init__(self, length, string_method, *, include_numbers=True, include_special_chars=False):
         '''
-        Creates a customisable password depending on length, string_method, numbers and special_chars
+        Creates a customisable password depending on length, string_method, numbers and special characters
         '''
         characters = ''
         self.output = ''
@@ -62,9 +62,9 @@ class Memorable(Simple):
         self.output = ''
 
     def generate(self):
-        '''Gets a list of random words'''
+        '''Gets a list of random words using the Random-Word library'''
         r = RandomWords()
-        words = r.get_random_words(minLength=5, maxLength=7)
+        words = r.get_random_words(minLength=7, maxLength=10)
 
         '''
         Generates the password containing 2 words and numbers if self.numbers == True
