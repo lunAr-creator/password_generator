@@ -141,6 +141,8 @@ var = {insert password type}(args)
 for i in range(INSERT NUM):
   print(var.generate())
 ```
+<br></br>
+> _**Note**_: If you generate one password (_password1_), and then generate another password (_password2_) with the same object, **_password1_** will be cleared and replaced by **_password2_**. Therefore,  if you would like to **keep** a password, simply append it to a list of passwords or or store them in a file, database etc.
 
 </details>
 
