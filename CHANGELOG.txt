@@ -34,3 +34,7 @@ Change Log
 0.0.8 (25/03/2021)
 -------------------
 - Fixed bug for Memorable passwords
+
+0.0.9 (3/04/2021)
+-------------------
+- Added shuffling for simple and complex passwords in the generate method

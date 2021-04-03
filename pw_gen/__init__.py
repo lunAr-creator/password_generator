@@ -1,6 +1,7 @@
 import random
 import secrets
 import string
+import string_utils
 
 from random_word import RandomWords
 
@@ -10,6 +11,7 @@ class Simple():
         self.length = length
         self.characters = characters
         self.output = ''
+        self.shuffled_output = ''
 
     def generate(self):
         '''
@@ -21,16 +23,19 @@ class Simple():
         else:
             characters = self.characters
 
-        del(self.output)
         self.output = ''
+        self.shuffled_output = ''
         password = ''
         for c in range(self.length):
             password += secrets.choice(characters)
         self.output += password
-        return str(self.output)
+
+        self.shuffled_output = string_utils.shuffle(self.output)
+
+        return str(self.shuffled_output)
 
     def result(self):
-        return str(self.output.__str__())
+        return str(self.shuffled_output.__str__())
 
 class Complex(Simple):
     def __init__(self, length, string_method, *, include_numbers=True, include_special_chars=False):
@@ -70,7 +75,6 @@ class Memorable(Simple):
         Generates the password containing 2 words and numbers if self.numbers == True
         '''
 
-        del(self.output)
         self.output = ''
         password = ''
         two_words = ''
@@ -82,3 +86,6 @@ class Memorable(Simple):
                 password += secrets.choice(string.digits)
         self.output += password
         return self.output
+
+    def result(self):
+        return str(self.output.__str__())
