@@ -1,6 +1,8 @@
 <p align='center'>
-  <img src='/images/logo.png' width='200'>
+  <im src='/images/logo.png' width='200'>
 <p>
+  
+# pw-gen
 
 [![Downloads](https://pepy.tech/badge/pw-gen)](https://pepy.tech/project/pw-gen) ![Version](https://img.shields.io/badge/version-0.0.9-blue) ![Lines of code](https://img.shields.io/tokei/lines/github/lunAr-creator/pw-gen) ![Python-Version](https://img.shields.io/badge/python-3.9-blue) ![issues](https://img.shields.io/github/issues/lunAr-creator/pw-gen) ![PyPI - Status](https://img.shields.io/pypi/status/pw-gen) ![License](https://img.shields.io/github/license/lunAr-creator/pw-gen) 
 
