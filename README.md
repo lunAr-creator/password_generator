@@ -24,6 +24,7 @@ pip install --upgrade pw-gen
 
 <br></br>
 ## Basic usage
+
 ### Simple passwords (Less Arguments)
 ```python
 from pw_gen import Simple
@@ -39,7 +40,7 @@ print(var.result())
 ```
 pcWW1QjppIWkzErqjdh8
 ```
-
+<br></br>
 ### Complex passwords (More Arguments)
 
 ```python
@@ -57,6 +58,7 @@ print(var.result())
 \{=~#YR>XR@N+Q3K{WFB
 ```
 
+<br></br>
 
 ### Memorable passwords (Easy to remember)
 
