@@ -16,7 +16,7 @@ class Simple():
     def generate(self):
         '''
         Generates a password depending on the num_of_passwords 
-        and the arugments provided in the simple class
+        and the arguments provided in the simple class
         '''
         characters = ''
         if self.characters is None:
