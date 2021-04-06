@@ -19,6 +19,7 @@ class Simple():
         and the arguments provided in the simple class
         '''
         characters = ''
+
         if self.characters is None:
             characters = string.ascii_letters + string.digits
         else:
@@ -27,12 +28,12 @@ class Simple():
         self.output = ''
         self.shuffled_output = ''
         password = ''
+
         for c in range(self.length):
             password += secrets.choice(characters)
         self.output += password
 
         self.shuffled_output = string_utils.shuffle(self.output)
-
         return str(self.shuffled_output)
 
     def result(self):
@@ -79,13 +80,16 @@ class Memorable(Simple):
         self.output = ''
         password = ''
         two_words = ''
+
         for i in range(2):
             two_words += secrets.choice(words).title()
         password = two_words
+
         if self.include_numbers == True:
             for i in range(random.randint(3, 4)):
                 password += secrets.choice(string.digits)
         self.output += password
+
         return self.output
 
     def result(self):
