@@ -1,9 +1,8 @@
 import random
 import secrets
 import string
-import string_utils
 
-from random_word import RandomWords
+import urllib.request
 
 class Simple():
     def __init__(self, length: int, *, characters = None):
@@ -11,7 +10,6 @@ class Simple():
         self.length = length
         self.characters = characters
         self.output = ''
-        self.shuffled_output = ''
 
     def generate(self):
         '''
@@ -26,18 +24,14 @@ class Simple():
             characters = self.characters
 
         self.output = ''
-        self.shuffled_output = ''
         password = ''
 
-        for c in range(self.length):
+        for i in range(self.length):
             password += secrets.choice(characters)
         self.output += password
 
-        self.shuffled_output = string_utils.shuffle(self.output)
-        return str(self.shuffled_output)
-
     def result(self):
-        return str(self.shuffled_output.__str__())
+        return str(self.output.__str__())
 
 class Complex(Simple):
     def __init__(self, length, string_method, *, include_numbers=True, include_special_chars=False):
@@ -69,13 +63,15 @@ class Memorable(Simple):
         self.output = ''
 
     def generate(self):
-        '''Gets a list of random words using the Random-Word library'''
-        r = RandomWords()
-        words = r.get_random_words(minLength=7, maxLength=10)
-
         '''
         Generates the password containing 2 words and numbers if self.numbers == True
         '''
+        word_url = "http://svnweb.freebsd.org/csrg/share/dict/words?view=co&content-type=text/plain"
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'}
+        req = urllib.request.Request(word_url, headers=headers)
+        response = response = urllib.request.urlopen(req)
+        long_txt = response.read().decode()
+        words = long_txt.splitlines()
 
         self.output = ''
         password = ''
@@ -83,12 +79,12 @@ class Memorable(Simple):
 
         for i in range(2):
             two_words += secrets.choice(words).title()
-        password = two_words
+            password = two_words
 
-        if self.include_numbers == True:
+        if self.include_numbers:
             for i in range(random.randint(3, 4)):
                 password += secrets.choice(string.digits)
-        self.output += password
+            self.output += password
 
         return self.output
 

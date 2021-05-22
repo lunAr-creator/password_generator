@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: pw-gen
-Version: 0.0.9
+Version: 0.1.0
 Summary: A library for generating secure passwords
 Home-page: https://github.com/lunAr-creator/password_generator
 Author: Soma Benfell
@@ -80,6 +80,11 @@ Description: A library for generating secure randomised passwords.
         0.0.9 (3/04/2021)
         -------------------
         - Added shuffling for simple and complex passwords in the generate method
+        
+        0.1.0 (22/05/2021)
+        -------------------
+        - Removed shuffling (string_utils) and random_word library.
+        - Changed to using urllib.request instead of random_word
         
 Keywords: password
 Platform: UNKNOWN
