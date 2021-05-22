@@ -43,3 +43,7 @@ Change Log
 -------------------
 - Removed shuffling (string_utils) and random_word library.
 - Changed to using urllib.request instead of random_word
+
+0.1.1 (22/05/2021)
+-------------------
+- Updated install_requires in setup.py
