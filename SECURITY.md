@@ -10,7 +10,7 @@ currently being supported with security updates.
 | 0.1.1   | :white_check_mark: |
 | 0.1.0   | :white_check_mark: |
 | 0.0.9   | :white_check_mark: |
-| 0.0.8   | :z:                |
+| 0.0.8   | :x:                |
 | 0.0.7   | :x:                |
 | < 0.0.6   | :x:                |
 
