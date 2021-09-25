@@ -7,7 +7,7 @@
 [![Downloads](https://pepy.tech/badge/pw-gen)](https://pepy.tech/project/pw-gen) ![Version](https://img.shields.io/badge/version-0.1.1-blue) ![Python-Version](https://img.shields.io/badge/python-3.9-blue) ![issues](https://img.shields.io/github/issues/lunAr-creator/pw-gen) ![PyPI - Status](https://img.shields.io/pypi/status/pw-gen) ![License](https://img.shields.io/github/license/lunAr-creator/pw-gen) 
 
 
-```pw-gen``` is a library whcih deales with generating secure randomised passwords that are customisable and strong simultaneously.
+```pw-gen``` is a library which deals with generating secure randomised passwords that are customisable and strong simultaneously.
 <br></br>
 ## Installation
 
