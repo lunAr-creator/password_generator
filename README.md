@@ -1,5 +1,5 @@
 <p align='center'>
-  <im src='/images/logo.png' width='200'>
+  <img src='/images/logo.png' width='200'>
 <p>
   
 # pw-gen
